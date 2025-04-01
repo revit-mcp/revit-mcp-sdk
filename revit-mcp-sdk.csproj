@@ -31,6 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPI">
+      <HintPath>..\..\..\..\..\Program Files\Autodesk\Revit 2019\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\..\..\..\..\Program Files\Autodesk\Revit 2019\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,8 +52,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="API\Base\ExternalEventCommandBase.cs" />
+    <Compile Include="API\Interfaces\ICommandRegistry.cs" />
+    <Compile Include="API\Interfaces\ILogger.cs" />
+    <Compile Include="API\Interfaces\IRevitCommand.cs" />
+    <Compile Include="API\Interfaces\IRevitCommandInitializable.cs" />
+    <Compile Include="API\Interfaces\IWaitableExternalEventHandler.cs" />
+    <Compile Include="API\Models\CommandResult.cs" />
+    <Compile Include="API\Models\JsonRPCErrorCodes.cs" />
+    <Compile Include="API\Models\JsonRPCRequest.cs" />
+    <Compile Include="API\Models\JsonRPCSerializer.cs" />
+    <Compile Include="API\Models\JsonRPCSuccessResponse.cs" />
+    <Compile Include="API\Versioning\RevitVersionAdapter.cs" />
+    <Compile Include="API\Versioning\VersionHelper.cs" />
+    <Compile Include="Exceptions\CommandExecutionException.cs" />
+    <Compile Include="Exceptions\ConfigurationException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
