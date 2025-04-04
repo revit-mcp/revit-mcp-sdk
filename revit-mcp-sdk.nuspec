@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>revit-mcp-sdk</id>
+    <version>1.0.0-beta.1</version>
+    <authors>revit-mcp</authors>
+    <owners>revit-mcp</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>http://revit-mcp.com/</projectUrl>
+    <repository type="git" url="https://github.com/revit-mcp/revit-mcp" />
+    <description>SDK for Revit-MCP projects. Includes common interfaces and utilities.</description>
+    <tags>Revit MCP Autodesk BIM</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.8">
+        <dependency id="Newtonsoft.Json" version="13.0.3" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\x64\Release\revit-mcp-sdk.dll" target="lib\net48" />
+    <file src="README.md" target="" />
+  </files>
+</package>
